@@ -9,7 +9,7 @@ export default function LayoutAdmin({
   return (
     <SidebarProvider>
       <AppSidebar />
-      {children}
+      <div className="container mx-auto px-0 max-w-full">{children}</div>
     </SidebarProvider>
   );
 }

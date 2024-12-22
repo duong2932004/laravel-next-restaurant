@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
 import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
+import { DataTableDemo } from "@/components/order/table";
 
 function DashboardsLayout() {
   const [date1, setDate1] = React.useState<Date>();
@@ -40,8 +41,11 @@ function DashboardsLayout() {
       <header className="flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-2">
           <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-2 h-4" />
-          <Breadcrumb>
+          <Separator
+            orientation="vertical"
+            className="mr-2 h-4 hidden md:block"
+          />
+          <Breadcrumb className="hidden md:block">
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
                 <BreadcrumbLink href="#">Cửa hàng 1</BreadcrumbLink>
@@ -125,7 +129,7 @@ function DashboardsLayout() {
             </div>
           </div>
         </div>
-        table
+        <DataTableDemo />
       </div>
     </SidebarInset>
   );
