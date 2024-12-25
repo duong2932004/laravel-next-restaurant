@@ -10,11 +10,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 
 export default function LanguageSwitch() {
+  const t = useTranslations("language");
+
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const localActive = useLocale();
@@ -36,8 +38,8 @@ export default function LanguageSwitch() {
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value="vi">Việt Nam</SelectItem>
-            <SelectItem value="en">English</SelectItem>
+            <SelectItem value="vi">{t("vi")}</SelectItem>
+            <SelectItem value="en">{t("en")}</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>

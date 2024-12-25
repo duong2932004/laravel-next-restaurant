@@ -21,15 +21,16 @@ import {
 import { ThemeToggle } from "@/components/dark-mode/theme-toggle";
 import LanguageSwitch from "@/components/language-switch";
 import createLocalePath from "@/utils/createLocalePath";
+import Search from "@/components/header/search";
 
 function Header() {
-  const t = useTranslations("Navigation");
+  const t = useTranslations("header");
   const localActive = useLocale();
 
   return (
-    <div>
-      <div className="w-full px-5 py-4 flex justify-between items-center">
-        <div className="left-header flex items-center space-x-4">
+    <div className="bg-[]">
+      <div className="w-full px-5 py-4 grid grid-cols-2 sm:grid-cols-3 justify-items-stretch ">
+        <div className="left-header flex items-center space-x-4 justify-self-start">
           <div className="flex">
             <div className="md:hidden sm:block">
               <Sheet>
@@ -40,48 +41,51 @@ function Header() {
                 </SheetTrigger>
                 <SheetContent side="left">
                   <SheetHeader>
-                    <SheetTitle>{t("menu-small.title")}</SheetTitle>
-                    <SheetDescription>
-                      {t("menu-small.description")}
-                    </SheetDescription>
+                    <SheetTitle>{t("home.title")}</SheetTitle>
+                    <SheetDescription>{t("home.description")}</SheetDescription>
                   </SheetHeader>
                   <div className="grid gap-2 py-4 grid-cols-2">
-                    <Button>{t("menu-small.logged-in.item-1")}</Button>
-                    <Button>{t("menu-small.logged-in.item-2")}</Button>
-                    <Button>{t("menu-small.logged-in.item-3")}</Button>
+                    <Button>{t("home")}</Button>
+                    <Button>{t("about")}</Button>
+                    <Button>{t("contact")}</Button>
+                    <Button>{t("order")}</Button>
+                    <Button>{t("login")}</Button>
                   </div>
                   <SheetFooter>
-                    <Button>{t("menu-small.logged-in.item-4")}</Button>
+                    <Button>{t("home")}</Button>
                   </SheetFooter>
                 </SheetContent>
               </Sheet>
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
-              {" "}
-              {/* Ensures logo is vertically aligned */}
               <div className="logo flex items-center">
                 <TbClover size="1.5rem" />
               </div>
               <ul className="flex space-x-4">
-                <Link href="/">{t("menu-small.logged-in.item-1")}</Link>
-                <Link href="/">{t("menu-small.logged-in.item-2")}</Link>
-                <Link href="/">{t("menu-small.logged-in.item-3")}</Link>
-                <Link href="/">{t("menu-small.logged-in.item-4")}</Link>
+                <Link href="/">{t("home")}</Link>
+                <Link href="/">{t("about")}</Link>
+                <Link href="/">{t("order")}</Link>
+                <Link href="/">{t("login")}</Link>
                 <Link href={createLocalePath("/login", localActive)}>
-                  {t("menu-small.not-logged-in.item-2")}
+                  {t("login")}
                 </Link>
               </ul>
             </div>
           </div>
         </div>
-
-        <div className="right-header flex items-center space-x-3">
+        <div className="hidden sm:block w-full justify-self-center">
+          <Search />
+        </div>
+        <div className="right-header flex items-center space-x-3 justify-self-end">
           <LanguageSwitch />
           <ThemeToggle />
         </div>
       </div>
       <hr />
+      <div className="block sm:hidden">
+        <Search />
+      </div>
     </div>
   );
 }
