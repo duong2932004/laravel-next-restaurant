@@ -1,8 +1,8 @@
 "use client";
 
-import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
+import { PlaceholdersAndVanishInput } from "../ui/placeholders-and-vanish-input";
 
-const Search = () => {
+export function PlaceholdersAndVanishInputDemo() {
   const placeholders = [
     "What's the first rule of Fight Club?",
     "Who is Tyler Durden?",
@@ -19,7 +19,7 @@ const Search = () => {
     console.log("submitted");
   };
   return (
-    <div className="">
+    <div className="h-[40rem] flex flex-col justify-center  items-center px-4">
       <PlaceholdersAndVanishInput
         placeholders={placeholders}
         onChange={handleChange}
@@ -27,5 +27,4 @@ const Search = () => {
       />
     </div>
   );
-};
-export default Search;
+}

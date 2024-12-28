@@ -9,20 +9,16 @@
     "order": "Đơn hàng",
     "login": "Đăng nhập"
   },
-  "home": {
-    "title": "Trang chủ",
-    "description": "Chào mừng bạn đên với trang chủ"
+  "Footer": {
+    "copyright": "© 2024 Đơn đăng ký của bạn. Đã đăng ký Bản quyền."
   },
-  "IndexPage": {
+  "home": {
     "title": "Trang chủ",
     "description": "Chào mừng bạn đên với trang chủ"
   },
   "NotFoundPage": {
     "title": "404 Không tìm thấy",
     "description": "Không tìm thấy đường dẫn này!"
-  },
-  "Footer": {
-    "copyright": "© 2024 Đơn đăng ký của bạn. Đã đăng ký Bản quyền."
   },
   "Login": {
     "title": "Đăng nhập",

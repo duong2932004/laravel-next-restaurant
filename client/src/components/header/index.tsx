@@ -29,7 +29,7 @@ function Header() {
 
   return (
     <div className="bg-[]">
-      <div className="w-full px-5 py-4 grid grid-cols-2 sm:grid-cols-3 justify-items-stretch ">
+      <div className="w-full px-5 py-4 grid grid-cols-2 sm:grid-cols-[1fr_1.5fr_0.5fr] justify-items-stretch">
         <div className="left-header flex items-center space-x-4 justify-self-start">
           <div className="flex">
             <div className="md:hidden sm:block">
@@ -74,7 +74,7 @@ function Header() {
             </div>
           </div>
         </div>
-        <div className="hidden sm:block w-full justify-self-center">
+        <div className="hidden sm:block w-full justify-self-center text-center">
           <Search />
         </div>
         <div className="right-header flex items-center space-x-3 justify-self-end">
@@ -82,7 +82,6 @@ function Header() {
           <ThemeToggle />
         </div>
       </div>
-      <hr />
       <div className="block sm:hidden">
         <Search />
       </div>

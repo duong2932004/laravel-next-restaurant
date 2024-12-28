@@ -29,7 +29,7 @@ export default function RootLayout({
           <div className="container mx-auto px-0 max-w-full">
             {" "}
             <NextIntlProvider locale={locale}>
-              {children}
+              <div className="p-2">{children}</div>
               <Toaster />
             </NextIntlProvider>
           </div>

@@ -4,7 +4,7 @@ import { DataTableDemo } from "@/components/order/table";
 import { useTranslations } from "next-intl";
 
 export default function Home() {
-  const t = useTranslations("IndexPage");
+  const t = useTranslations("home");
 
   return (
     <div className="container mx-auto px-0 max-w-full">
